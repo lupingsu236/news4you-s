@@ -1,0 +1,31 @@
+### Create new user; username must be unique
+POST http://localhost:3000/users/create
+Content-Type: application/json
+{
+    "username": "admin2345", 
+    "password": "password2345"
+}
+
+### Login
+POST http://localhost:3000/users
+Content-Type: application/json
+{
+    "username": "admin2345",
+    "password": "password2345"
+}
+
+
+### Retrieve news 
+GET http://localhost:3000/news
+
+
+### Create news -- must be logged in and verified with JWT token 
+POST http://localhost:3000/news/create 
+Authorization: Bearer <JWT token>
+Content-Type: application/json
+{
+    "image": "testing",
+    "title": "testing creation of news!",
+    "comments": "abcedfg",
+    "createdby": "hello4b"
+}
