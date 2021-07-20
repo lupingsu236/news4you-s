@@ -36,7 +36,7 @@ router.post("/create", async (req, res) => {
 
 //retrieve news 
 router.get("", async (req, res) => {
-    News.find((err, news) => {
+    News.find({}).sort('-timestamp').exec((err, news) => {
         if(err) {
             return res.status(500).send(err);
         }

@@ -6,12 +6,15 @@ Content-Type: application/json
     "password": "password2345"
 }
 
+
+
 ### Login
+### other users for use: [jon; jon987], [user123; password123]
 POST http://localhost:3000/users
 Content-Type: application/json
 {
-    "username": "admin2345",
-    "password": "password2345"
+    "username": "lpsu",
+    "password": "password"
 }
 
 
