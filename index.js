@@ -11,14 +11,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan('combined'));
 
+//serves angular files
+app.use(express.static(__dirname + '/news4you'));
+
 app.use("/news", newsRouter);
 app.use("/users", userRouter);
 
 require("./models/db");
 
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
     res.send("APIs for News4You");
-});
+});*/ 
 
 const PORT = process.env.PORT || 3000;
 
